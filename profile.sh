@@ -15,3 +15,15 @@ function gitcommit() {
   git push origin master
 };
 alias commit=gitcommit
+
+## find and delete dead symlinks ###############################################
+function find_dead_syms_and_delete() {
+  find -L $1 -type l -delete
+}
+alias fdsym=find_dead_syms_and_delete
+
+## find dead symlinks ##########################################################
+function find_dead_syms_and_print() {
+  find -L $1 -type l
+}
+alias fsym=find_dead_syms_and_print
